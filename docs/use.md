@@ -221,10 +221,7 @@ ReactFire provides an a wrapper around `Suspense` called `SuspenseWithPerf` that
 ```jsx
 function FoodRatings() {
   return (
-    <SuspenseWithPerf
-      fallback={'loading burrito status...'}
-      traceId={'load-burrito-status'}
-    >
+    <SuspenseWithPerf fallback={'loading burrito status...'} traceId={'load-burrito-status'}>
       <Burrito />
     </SuspenseWithPerf>
   );
@@ -252,7 +249,7 @@ function Burrito() {
     }
   });
 
-  const isYummy = burritoDoc.data().yummy;
+  const isYummy = burritoDoc.yummy;
 
   return <p>The burrito is {isYummy ? 'good' : 'bad'}!</p>;
 }
